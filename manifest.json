@@ -1,0 +1,18 @@
+{
+  "name": "iPillage",
+  "description": "iP Beta.",
+  "version": "0.3",
+  "icons": {
+    "128": "pil.png"
+  },
+  "background_page": "back.html",
+  "update_url": "http://dealerweb.grandcare.com/chrome_ext_updates.xml",
+  "browser_action": {
+    "default_icon": "pil.png", // required
+    "default_title": "ATTACK!",    // optional; shown in tooltip
+    "default_popup": "pop.html"    // optional
+  },
+  "permissions": [
+  "tabs", "http://*/*", "https://*/*"
+  ]
+}

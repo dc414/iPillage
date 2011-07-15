@@ -1,0 +1,68 @@
+<script>
+/**
+function con(url)
+{
+ chrome.browserAction.setBadgeText({text:".X"});
+ var xhr = new XMLHttpRequest();
+ xhr.open("GET", url, false);
+ chrome.browserAction.setBadgeText({text:"s."});
+ xhr.send();
+ chrome.browserAction.setBadgeText({text:"sX"});
+ return xhr.responseText;
+}
+function checkOpen(url)
+{
+ var par = con(url+"-1%20and%201=1%20union%20select%200--");
+ if(par.indexOf("different number of columns") != -1)
+ {
+  return 1;
+ }else{
+  return 0;
+ }
+}
+function check(url, tabId){
+ if(url.indexOf("=") != -1)
+ {
+  var par = url.split("=");
+  par.pop();
+  var rawurl = par.join()+"=";
+  var isOpen = checkOpen(rawurl);
+  if(isOpen == 1)
+  {
+   //chrome.pageAction.show(tabId);
+   chrome.browserAction.setBadgeBackgroundColor({color:[255, 0, 0, 255]});
+   localStorage['rawUrl'] = rawurl;
+   return;
+  }
+  localStorage['rawUrl'] = url;
+  chrome.browserAction.setBadgeBackgroundColor({color:[0, 200, 0, 100]});
+  //chrome.tabs.executeScript(null,{code:"alert(1)"});
+ }
+ else
+ {
+  //chrome.pageAction.hide(tabId);
+  chrome.browserAction.setBadgeBackgroundColor({color:[0, 200, 0, 100]});
+  localStorage['rawUrl'] = url;
+ }
+}
+chrome.tabs.onSelectionChanged.addListener(function(tabId) {
+ //chrome.pageAction.hide(tabId);
+ //chrome.browserAction.setBadgeBackgroundColor({color:[0, 400, 0, 300]}, tabId);
+ chrome.tabs.getSelected(null, function(tab){
+  var rawtaburl = tab.url;
+  check(rawtaburl, tab.id);
+ });
+});
+chrome.tabs.onUpdated.addListener(function(tabId) {
+ //chrome.pageAction.hide(tabId);
+ //chrome.browserAction.setBadgeBackgroundColor({color:[0, 400, 0, 300]}, tabId);
+ chrome.tabs.getSelected(null, function(tab){
+  var rawtaburl = tab.url;
+  check(rawtaburl, tab.id);
+ });
+});
+*/
+chrome.browserAction.setBadgeBackgroundColor({color:[190, 190, 190, 230]});
+var bad = "iP";
+chrome.browserAction.setBadgeText({text:bad});
+</script>

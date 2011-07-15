@@ -1,0 +1,36 @@
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="lfi.js"></script>
+<script type="text/javascript" src="sql.js"></script>
+<script type="text/javascript" src="whois.js"></script>
+<script type="text/javascript" src="rdns.js"></script>
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="uploadshell.js"></script>
+<!--<script type="text/javascript" src="webtoolkit.base64.js"></script>-->
+<script>
+function go(){
+ var out = "<iframe src='http://dealerweb.grandcare.com/smalltxtads.html' width='500' height='40' scrolling='no' frameborder='0'></iframe>";
+ out += '<div id="tmp"><div id="url"></div>';
+ out += '-Attack scans-<BR>';
+ out += '<button onClick="sqlscan()">SQLi Scan</button><BR>';
+ //out += '<button onClick="lfiscan()">LFI Scan</button><BR>';
+ //out += '-Gather info-<BR>';
+ //out += '<button onClick="whois()">Whois</button><BR>';
+ //out += '<button onClick="rdns()">Reverse DNS</button><BR>';
+ //out += '-Misc.-<BR>';
+ //out += '<button onClick="hash_display()">Hasher</button></div>';
+ //out += '<button onClick="upload()">Shell</button></div>';
+ document.getElementById("data").innerHTML=out;
+ chrome.tabs.getSelected(null, function(tab){
+  var rawtaburl = tab.url;
+  document.getElementById("url").innerHTML='Target: <input type="text" id="target" value="'+rawtaburl+'"><BR>';
+ });
+}
+</script>
+<body onload="go()">
+<center>iPillage</center>
+<hr width="600">
+<div id="data">
+<div id="url"></div></div>
+<center>-<I><a href="https://dc414.org" target="about.html">dc414</a></i>-</center>
+</body>
