@@ -1,0 +1,13 @@
+Packing:
+
+DL all files to one folder.
+
+In chrome goto Manage Extensions.
+
+Expand Developer mode.
+
+Click the pack extension button.
+
+Goto the folder you downloaded all files to and hit open.
+
+That will start the packing process.
